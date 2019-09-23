@@ -1,6 +1,6 @@
 const express = require("express")
 const UserRouter = express.Router()
-const UserController = require("./user_controller")
+const UserController = require("./user__controller")
 
 UserRouter.get("/", UserController.getAllUsers)
 UserRouter.post("/", UserController.createUser)

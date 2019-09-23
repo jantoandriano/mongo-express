@@ -18,7 +18,7 @@ module.exports = {
       .then(data => res.send(data))
       .catch(err => {
         res.status(500).send({
-          message: err.message || "Some error occurred while creating the Note."
+          message: err.message || "Some error occurred while creating the user."
         });
       });
   },
@@ -68,11 +68,11 @@ module.exports = {
       .catch(err => {
         if (err.kind === "ObjectId") {
           return res.status(404).send({
-            message: "Note not found with id " + req.params.userID
+            message: "user not found with id " + req.params.userID
           });
         }
         return res.status(500).send({
-          message: "Error updating note with id " + req.params.userID
+          message: "Error updating user with id " + req.params.userID
         });
       });
     },
