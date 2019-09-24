@@ -1,5 +1,3 @@
-const Product = require("/models/product/product__models")
-
 module.exports = {
     getAllProducts : (req, res, next) => {
         res.send("Hello from get all products")

@@ -2,7 +2,8 @@ const User = require("../../models/user/user__models");
 
 module.exports = {
   getAllUsers: (req, res, next) => {
-    User.find().then(data => res.send(data));
+    User.find()
+    .then(data => res.send(data));
     console.log();
   },
 
@@ -46,7 +47,6 @@ module.exports = {
   },
 
   updateUser: (req, res, next) => {
-    // Find note and update it with the request body
     User.findByIdAndUpdate(
       req.params.userID,
       {

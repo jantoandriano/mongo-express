@@ -2,7 +2,6 @@ const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-const morgan = require("morgan")
 const app = express()
 const port = process.env.PORT || 3000
 const DB_CONFIG = require("./config/mongodb.config")
@@ -20,7 +19,6 @@ mongoose.connect(DB_CONFIG.url, { useNewUrlParser: true, useUnifiedTopology:true
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended : true}))
 app.use(cors())
-app.use(morgan)
 
 // use routes
 app.use(userRoutes)
