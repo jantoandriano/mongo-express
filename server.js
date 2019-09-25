@@ -3,7 +3,7 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 // const mongoose = require("mongoose")
 const app = express()
-const db = require("./config/mongodb.config.js")
+const db = require("./config/mongodb__config.js/index.js")
 
 const port = PORT || 3000
 
