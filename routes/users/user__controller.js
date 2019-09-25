@@ -3,7 +3,12 @@ const User = require("../../models/user/user__models");
 module.exports = {
   // get all users
   getAllUsers: (req, res, next) => {
-    User.find().populate("addresses", "address")
+    /* 
+    1. find user that we want to populate with address
+    2. fungsi "popoulate()" digunakan untuk mengpoulate user dgn address field
+        paramater pertama : field di user__model, paramater kedua untuk memfilter yang ingin ditampilkan
+    */
+    User.find().populate("addresses", "address -_id")
     .then(result => res.send(result))
   },
   
@@ -46,6 +51,11 @@ module.exports = {
 
   // update user by id
   updateUser: (req, res, next) => {
+    /*
+    1. fungsi "findByIdAndUpdate" digunakan untuk mencari _id dalam hal ini user yang ingin di update
+        -> paramater pertama di "findByIdAndUpdate" : i_d dalam hal ini user yang ingin dicari
+        -> paramater keduda di "findByIdAndUpdate": data yang digunakan untuk mengupdate user yang di cari berdasarkan _id pada param pertama
+    */
     User.findByIdAndUpdate(
       { _id: req.params.userID },
       {
