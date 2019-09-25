@@ -2,7 +2,7 @@
   "name": "mongo-express",
   "version": "1.0.0",
   "description": "monggodb dan expressjs",
-  "main": "server.js",
+  "main": "index.js",
   "author": "jantomotulo",
   "license": "MIT",
   "scripts": {
