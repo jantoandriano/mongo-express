@@ -1,11 +1,13 @@
 const User = require("../../models/user/user__models");
 
 module.exports = {
+  // get all users
   getAllUsers: (req, res, next) => {
-    User.find().then(data => res.send(data));
-    console.log();
+    User.find().populate("addresses", "address")
+    .then(result => res.send(result))
   },
-
+  
+  // create user
   createUser: (req, res, next) => {
     const user = new User(req.body);
     user
@@ -18,6 +20,8 @@ module.exports = {
       });
   },
 
+ 
+ // get single user
   getSingleUser: (req, res, next) => {
     User.findById({ _id: req.params.userID })
       .then(user => {
@@ -40,6 +44,7 @@ module.exports = {
       });
   },
 
+  // update user by id
   updateUser: (req, res, next) => {
     User.findByIdAndUpdate(
       { _id: req.params.userID },
@@ -71,6 +76,7 @@ module.exports = {
       });
   },
 
+  // delete user by given id
   deleteUser: (req, res, next) => {
     User.findByIdAndRemove({ _id: req.params.userID }, (error, data) => {
       if (error) {
@@ -87,3 +93,15 @@ module.exports = {
     });
   }
 };
+
+// exec((err, address) => {
+//   if (err) {
+//       console.log(err);
+//   } else{
+//       console.log(`populate user with ${address}`);
+//       res.send({
+//         message: "Successfully popolate user with address",
+//         address
+//       })
+//   }
+// })
