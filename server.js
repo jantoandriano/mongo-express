@@ -8,7 +8,8 @@ const DB_CONFIG = require("./config/mongodb.config")
 
 // routes
 const userRoutes = require("./routes/users/user__routes")
-const productRoutes = require("./routes/products/product__routes")
+const addressRoutes = require("./routes/address/address__routes")
+
 
 //connect to mongodb
 mongoose.Promise = global.Promise;
@@ -22,7 +23,7 @@ app.use(cors())
 
 // use routes
 app.use(userRoutes)
-app.use(productRoutes)
+app.use(addressRoutes)
 
 
 // listen to server
