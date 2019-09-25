@@ -1,8 +1,10 @@
 const express = require("express")
 const cors = require("cors")
+const db = require("./config/mongodb__config")
+const {PORT} = require("./config/variableEnv")
+
 const bodyParser = require("body-parser")
 const app = express()
-const db = require("./config/mongodb__config")
 const port = PORT || 3000
 
 // routes
@@ -15,7 +17,9 @@ const addressRoutes = require("./routes/address/address__routes")
 db.then(() => {
     console.log("connected to database");
     
-}).catch(error => console.log(error)
+}).catch(error => {
+    console.log(error)
+}
 )
 
 // midleware
