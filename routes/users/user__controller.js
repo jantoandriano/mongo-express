@@ -4,6 +4,7 @@ module.exports = {
   // get all users
   getAllUsers: (req, res, next) => {
     /* 
+    === POPULATE ===
     1. find user that we want to populate with address
     2. fungsi "popoulate()" digunakan untuk mengpoulate user dgn address field
         paramater pertama : field di user__model, paramater kedua untuk memfilter yang ingin ditampilkan
@@ -52,6 +53,7 @@ module.exports = {
   // update user by id
   updateUser: (req, res, next) => {
     /*
+    === FIND BY ID AND UPDATE ===
     1. fungsi "findByIdAndUpdate" digunakan untuk mencari _id dalam hal ini user yang ingin di update
         -> paramater pertama di "findByIdAndUpdate" : i_d dalam hal ini user yang ingin dicari
         -> paramater keduda di "findByIdAndUpdate": data yang digunakan untuk mengupdate user yang di cari berdasarkan _id pada param pertama

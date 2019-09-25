@@ -3,8 +3,10 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const app = express()
-const port = process.env.PORT || 3000
-const DB_CONFIG = require("./config/mongodb.config")
+const db = require("./config/mongodb.config")
+const {PORT} = require("./config/mongodb.config")
+
+const port = PORT || 3000
 
 // routes
 const userRoutes = require("./routes/users/user__routes")
@@ -13,7 +15,10 @@ const addressRoutes = require("./routes/address/address__routes")
 
 //connect to mongodb
 mongoose.Promise = global.Promise;
-mongoose.connect(DB_CONFIG.url, { useNewUrlParser: true, useUnifiedTopology:true }, () => console.log("connected to database")
+db.then(() => {
+    console.log("connected to database");
+    
+}).catch(error => console.log(error)
 )
 
 // midleware
