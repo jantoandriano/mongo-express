@@ -105,15 +105,3 @@ module.exports = {
     });
   }
 };
-
-// exec((err, address) => {
-//   if (err) {
-//       console.log(err);
-//   } else{
-//       console.log(`populate user with ${address}`);
-//       res.send({
-//         message: "Successfully popolate user with address",
-//         address
-//       })
-//   }
-// })
