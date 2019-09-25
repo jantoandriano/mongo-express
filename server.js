@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require("cors")
-const db = require("./config/mongodb__config")
+const db = require("./config/database")
 const {PORT} = require("./config/variableEnv")
 
 const bodyParser = require("body-parser")
