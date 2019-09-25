@@ -4,7 +4,6 @@ const bodyParser = require("body-parser")
 // const mongoose = require("mongoose")
 const app = express()
 const db = require("./config/mongodb__config")
-
 const port = PORT || 3000
 
 // routes
