@@ -25,6 +25,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // use routes
+app.get("/", (req, res, next) => {
+  res.send(`<h1>Janto</h1>`)
+})
 app.use("/users", userRoutes);
 app.use("/address", addressRoutes);
 
