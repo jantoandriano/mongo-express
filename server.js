@@ -1,10 +1,9 @@
 const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 const app = express()
-const db = require("./config/mongodb.config")
-const {PORT} = require("./config/mongodb.config")
+const db = require("./config/mongodb.config.js")
 
 const port = PORT || 3000
 
@@ -14,7 +13,7 @@ const addressRoutes = require("./routes/address/address__routes")
 
 
 //connect to mongodb
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 db.then(() => {
     console.log("connected to database");
     
